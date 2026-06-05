@@ -1,0 +1,111 @@
+# DEPI AI Mentor Knowledge Base
+# Digital Egypt Pioneers Initiative — Ministry of Communications and Information Technology
+# This file contains educational content used by the RAG retrieval pipeline.
+
+---
+SOURCE: DEPI Python Fundamentals
+TOPIC: Python Basics
+---
+Python is a high-level, interpreted, general-purpose programming language known for its readability and simplicity. Variables in Python do not require explicit type declarations. Python supports multiple data types including integers, floats, strings, lists, tuples, dictionaries, and sets. Control flow structures include if/elif/else conditionals, for loops, while loops, and try/except blocks for error handling. Functions are defined using the def keyword and can accept positional, keyword, and default arguments. Python uses indentation to define code blocks rather than curly braces.
+
+---
+SOURCE: DEPI Python Fundamentals
+TOPIC: Python Functions and Modules
+---
+A function in Python is defined using the def keyword followed by the function name and parameters. Functions can return values using the return statement. Lambda functions are anonymous single-expression functions defined with the lambda keyword. Python modules are files containing Python code that can be imported using the import statement. Common standard library modules include os, sys, math, datetime, json, and re. The pip package manager is used to install third-party packages from PyPI.
+
+---
+SOURCE: DEPI Data Analysis Track
+TOPIC: Pandas Library
+---
+Pandas is the primary Python library for data manipulation and analysis. The two main data structures are Series (one-dimensional) and DataFrame (two-dimensional tabular data). DataFrames can be created from CSV files using pd.read_csv(), from Excel files using pd.read_excel(), or from dictionaries and lists. Key operations include: selecting columns with df['column'], filtering rows with boolean indexing, grouping data with df.groupby(), merging dataframes with pd.merge() or df.join(), and reshaping with pivot_table(). The df.info() and df.describe() methods provide quick summaries of the dataset structure and statistics.
+
+---
+SOURCE: DEPI Data Analysis Track
+TOPIC: Data Cleaning with Pandas
+---
+Data cleaning is the process of detecting and correcting corrupt, inaccurate, or missing records. Common issues include missing values (NaN), duplicate rows, inconsistent formatting, and outliers. Missing values are handled using df.isnull(), df.fillna(), or df.dropna(). Duplicates are removed with df.drop_duplicates(). Data types can be converted using df.astype(). String cleaning operations are accessible via the df['col'].str accessor. Outliers can be detected using IQR (interquartile range) or Z-score methods. Always explore the data first using df.head(), df.shape, and df.value_counts() before cleaning.
+
+---
+SOURCE: DEPI Data Analysis Track
+TOPIC: Data Visualization
+---
+Data visualization transforms data into graphical representations to reveal patterns and insights. Matplotlib is the foundational Python plotting library; pyplot provides a MATLAB-like interface. Seaborn builds on Matplotlib and provides a higher-level interface for statistical graphics. Common chart types: line charts for trends over time, bar charts for categorical comparisons, histograms for distribution of a single variable, scatter plots for relationships between two variables, box plots for distribution and outliers, and heatmaps for correlation matrices. Plotly provides interactive charts suitable for web dashboards. Always label axes, add titles, and choose appropriate color palettes for accessibility.
+
+---
+SOURCE: DEPI SQL Notes
+TOPIC: SQL Fundamentals
+---
+SQL (Structured Query Language) is the standard language for managing and querying relational databases. The SELECT statement retrieves data: SELECT column1, column2 FROM table_name WHERE condition. The WHERE clause filters rows. ORDER BY sorts results. LIMIT restricts the number of returned rows. INSERT INTO adds new records. UPDATE modifies existing records. DELETE removes records. Aggregate functions include COUNT(), SUM(), AVG(), MIN(), and MAX(). The GROUP BY clause groups rows sharing a value in a specified column, typically used with aggregate functions.
+
+---
+SOURCE: DEPI SQL Notes
+TOPIC: SQL Joins
+---
+A JOIN combines rows from two or more tables based on a related column. INNER JOIN returns only matching rows from both tables. LEFT JOIN returns all rows from the left table and matched rows from the right (NULL if no match). RIGHT JOIN returns all rows from the right table and matched rows from the left. FULL OUTER JOIN returns all rows from both tables, with NULL where there is no match. CROSS JOIN returns the Cartesian product of both tables. Self-joins join a table with itself and require aliases. Always specify join conditions using ON to avoid unintentional Cartesian products. Example: SELECT a.name, b.order_id FROM customers a INNER JOIN orders b ON a.id = b.customer_id.
+
+---
+SOURCE: DEPI SQL Notes
+TOPIC: SQL Advanced Queries
+---
+Subqueries are nested SELECT statements used inside WHERE, FROM, or SELECT clauses. CTEs (Common Table Expressions) are defined using the WITH keyword and improve readability for complex queries. Window functions operate over a set of rows without collapsing them into groups; common window functions include ROW_NUMBER(), RANK(), DENSE_RANK(), LAG(), LEAD(), and SUM() OVER(). Indexes improve query performance on large tables by creating a data structure for faster lookup. EXPLAIN or EXPLAIN ANALYZE shows the query execution plan. Views are virtual tables defined by a stored SELECT query.
+
+---
+SOURCE: DEPI Statistics Notes
+TOPIC: Descriptive Statistics
+---
+Descriptive statistics summarize and describe the main features of a dataset. Measures of central tendency include the mean (arithmetic average), median (middle value), and mode (most frequent value). Measures of spread include range, variance, standard deviation, and interquartile range (IQR). A normal distribution is symmetric and bell-shaped, described by its mean and standard deviation. Skewness measures the asymmetry of a distribution. Kurtosis measures the tail heaviness. The coefficient of variation expresses standard deviation as a percentage of the mean and is useful for comparing variability across different units.
+
+---
+SOURCE: DEPI Statistics Notes
+TOPIC: Probability and Inferential Statistics
+---
+Probability is the measure of the likelihood that an event will occur, expressed as a value between 0 and 1. Conditional probability P(A|B) is the probability of A given that B has occurred. Bayes' theorem relates conditional probabilities: P(A|B) = P(B|A) * P(A) / P(B). Hypothesis testing is a statistical procedure to test a claim about a population parameter. The null hypothesis H0 represents the default assumption; the alternative hypothesis H1 is what you want to prove. The p-value is the probability of observing results at least as extreme as the observed data, assuming H0 is true. If p-value < significance level (typically 0.05), reject H0. Type I error is rejecting a true H0; Type II error is failing to reject a false H0.
+
+---
+SOURCE: DEPI Power BI Guides
+TOPIC: Power BI Fundamentals
+---
+Power BI is a business analytics service by Microsoft that enables interactive data visualization and business intelligence capabilities. The main components are Power BI Desktop (authoring tool), Power BI Service (cloud platform), and Power BI Mobile. The workflow consists of: Get Data (connect to data sources), Transform Data (using Power Query Editor), Model Data (create relationships and calculated columns), and Visualize (build reports and dashboards). Supported data sources include Excel, CSV, SQL Server, Azure, SharePoint, and hundreds of connectors. Reports contain multiple pages of visualizations; dashboards are single-page views pinned from reports.
+
+---
+SOURCE: DEPI Power BI Guides
+TOPIC: DAX Language
+---
+DAX (Data Analysis Expressions) is the formula language used in Power BI, Power Pivot, and Analysis Services. DAX formulas are used to create calculated columns and measures. A measure is a dynamic aggregation computed at query time; a calculated column is computed row-by-row and stored in the model. Common DAX functions: SUM(), AVERAGE(), COUNT(), COUNTROWS(), CALCULATE(), FILTER(), ALL(), RELATED(), IF(), SWITCH(), DATEADD(), TOTALYTD(). The CALCULATE function is the most powerful — it evaluates an expression in a modified filter context. Example: Sales YTD = TOTALYTD(SUM(Sales[Amount]), Dates[Date]).
+
+---
+SOURCE: Google Data Analytics Certificate
+TOPIC: Data Analysis Process
+---
+The Google Data Analytics framework defines six phases: Ask, Prepare, Process, Analyze, Share, and Act. In the Ask phase, you define the problem and what success looks like. Prepare involves collecting and organizing data, evaluating its credibility using the ROCCC framework (Reliable, Original, Comprehensive, Current, Cited). Process involves cleaning the data for analysis. Analyze means discovering patterns and drawing conclusions. Share involves creating visualizations and presentations. Act means implementing recommendations based on insights. Structured thinking and clear communication are as important as technical skills in data analytics.
+
+---
+SOURCE: DEPI AI Engineering Track
+TOPIC: Machine Learning Fundamentals
+---
+Machine learning is a subset of artificial intelligence where systems learn from data to improve performance on a task without being explicitly programmed. Supervised learning uses labeled training data to learn a mapping from inputs to outputs; examples include regression and classification. Unsupervised learning finds patterns in unlabeled data; examples include clustering and dimensionality reduction. The machine learning workflow: define the problem, collect and prepare data, choose and train a model, evaluate performance, tune hyperparameters, and deploy. Overfitting occurs when a model memorizes training data but fails to generalize; it is addressed by regularization, cross-validation, and more training data.
+
+---
+SOURCE: DEPI AI Engineering Track
+TOPIC: Scikit-learn and Model Evaluation
+---
+Scikit-learn is the primary Python library for classical machine learning. It provides a consistent API: fit() to train a model, predict() to generate predictions, and score() to evaluate performance. Common algorithms: LinearRegression, LogisticRegression, DecisionTreeClassifier, RandomForestClassifier, KNeighborsClassifier, SVC, and KMeans for clustering. Model evaluation metrics: accuracy, precision, recall, F1-score for classification; MAE, MSE, RMSE, R-squared for regression. Cross-validation (cv=5 or cv=10) provides a more reliable estimate of generalization performance than a single train/test split. Pipelines in scikit-learn chain preprocessing steps and a model to prevent data leakage.
+
+---
+SOURCE: DEPI AI Engineering Track
+TOPIC: Deep Learning and Neural Networks
+---
+Deep learning uses multi-layer neural networks to learn representations from data. A neural network consists of an input layer, one or more hidden layers, and an output layer. Each neuron applies a weighted sum of inputs followed by a non-linear activation function (ReLU, sigmoid, tanh, softmax). Training uses backpropagation to compute gradients and gradient descent (or Adam optimizer) to update weights. TensorFlow and PyTorch are the dominant deep learning frameworks. CNNs (Convolutional Neural Networks) are designed for image data. RNNs and LSTMs handle sequential data. Transformers, based on the self-attention mechanism, are the architecture behind modern LLMs like GPT and BERT.
+
+---
+SOURCE: DEPI Career Guidance
+TOPIC: Data Analyst Career Path
+---
+A data analyst collects, processes, and interprets data to support business decisions. Core skills: SQL, Excel, Python or R, data visualization tools (Power BI, Tableau), and statistical analysis. Entry-level titles include Junior Data Analyst and Business Intelligence Analyst. Mid-level progression leads to Senior Data Analyst or Analytics Manager. Specializations include marketing analytics, financial analytics, and product analytics. A strong portfolio should demonstrate end-to-end projects: data collection, cleaning, analysis, and visualization with business insights. LinkedIn profile should highlight quantifiable achievements (e.g., "reduced reporting time by 30%"). Certifications such as Google Data Analytics, Microsoft PL-300 (Power BI), and IBM Data Analyst are well-recognized.
+
+---
+SOURCE: DEPI Career Guidance
+TOPIC: AI Engineer Career Path
+---
+An AI engineer builds and deploys AI-powered systems and applications. Core skills: Python, machine learning, deep learning frameworks (PyTorch, TensorFlow), MLOps tools, cloud platforms (AWS, Azure, GCP), and LLM APIs. Key roles include ML Engineer, NLP Engineer, Computer Vision Engineer, and Generative AI Engineer. The field is rapidly evolving with high demand for engineers experienced in LLMs, RAG systems, and agentic AI. Portfolio projects should demonstrate end-to-end model development, deployment, and monitoring. Strong GitHub activity, contributions to open-source, and technical writing (blog posts) significantly improve hiring prospects. Certifications: AWS Machine Learning Specialty, Google Professional ML Engineer, DeepLearning.AI specializations.
